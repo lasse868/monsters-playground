@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
+import CardList from './components/card-list/card-list.component';
 
 
 const App=()=> {
@@ -33,15 +34,8 @@ const App=()=> {
 
       <input type='search' placeholder='search monster' onChange={onSearchChange}/>
 
-      {
-        filteredMonsters.map((monster)=>{
-          return(
-          <div key={monster.id}>
-            <h1>{monster.name}</h1>
-          </div>
-          )
-        })
-      }
+      <CardList filteredMonsters={filteredMonsters}/>
+
 
     </div>
   );
